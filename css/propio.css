@@ -1,0 +1,31 @@
+.sep-top{
+    margin-top:60px;
+}
+
+.centrado{
+    max-width: 500px;
+    margin:20px auto;
+}
+
+.error{
+    margin:20px 0;
+    border:1px solid red;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error h4{
+    margin-bottom: 0;
+    color: red;
+}
+
+.error span{
+    font-weight: bold;
+}
+
+.hola{
+    padding:14px 5px;
+    color:#a6e1ec;
+    
+    margin:0;
+}

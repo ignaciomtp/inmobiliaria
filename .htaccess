@@ -1,0 +1,20 @@
+Options +FollowSymLinks
+RewriteEngine On
+ 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+ 
+RewriteRule ^/$ ./index.php
+RewriteRule ^listar/$ ./index.php?ctl=listar
+RewriteRule ^listar$ ./index.php?ctl=listar
+RewriteRule ^registro/$ ./index.php?ctl=registro
+RewriteRule ^registro$ ./index.php?ctl=registro
+RewriteRule ^contacto/$ ./index.php?ctl=contacto
+RewriteRule ^contacto$ ./index.php?ctl=contacto
+RewriteRule ^insertar/$ ./index.php?ctl=insertar
+RewriteRule ^login/$ ./index.php?ctl=login
+RewriteRule ^login$ ./index.php?ctl=login
+RewriteRule ^login-error/$ ./index.php?ctl=loginerror
+RewriteRule ^miperfil/$ ./index.php?ctl=miperfil
+RewriteRule ^miperfil$ ./index.php?ctl=miperfil
+RewriteRule ^logout/$ ./index.php?ctl=logout
