@@ -15,6 +15,11 @@ RewriteRule ^insertar/$ ./index.php?ctl=insertar
 RewriteRule ^login/$ ./index.php?ctl=login
 RewriteRule ^login$ ./index.php?ctl=login
 RewriteRule ^login-error/$ ./index.php?ctl=loginerror
-RewriteRule ^miperfil/$ ./index.php?ctl=miperfil
-RewriteRule ^miperfil$ ./index.php?ctl=miperfil
+RewriteRule ^panel/$ ./index.php?ctl=panel
+RewriteRule ^panel$ ./index.php?ctl=panel
 RewriteRule ^logout/$ ./index.php?ctl=logout
+RewriteRule ^nuevoinmueble/$ ./index.php?ctl=nuevoinmueble
+RewriteRule ^insertarinmueble/$ ./index.php?ctl=insertarinmueble
+RewriteRule ^inmueble/([0-9]+)$ ./index.php?ctl=verinmueble&id=$1
+RewriteRule ^pruebas$ ./index.php?ctl=pruebas
+

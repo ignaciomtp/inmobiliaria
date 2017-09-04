@@ -60,6 +60,11 @@
                                 
                                 echo "<li class='nav-item'>";
                                 echo "  <a class='nav-link' href='";
+                                generarUrlMenu('panel');
+                                echo "'>Panel de Control</a></li>";  
+                                
+                                echo "<li class='nav-item'>";
+                                echo "  <a class='nav-link' href='";
                                 generarUrlMenu('logout');
                                 echo "'>Cerrar Sesión</a></li>";     
                             }

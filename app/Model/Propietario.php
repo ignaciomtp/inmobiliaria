@@ -61,5 +61,15 @@ class Propietario{
         return $this->id;
     }
     
+    public static function buscarEmail($mail){
+        $conn = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
+        $sql = "SELECT * FROM propietarios WHERE email = '$mail'";
+        
+        $s = $conn->prepare($sql);
+        $s->execute();
+        $conn = null; 
+        return $s->fetch();
+        
+    }
     
 }

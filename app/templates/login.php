@@ -1,14 +1,14 @@
  <?php 
  $error = "";
  if ( usuarioAutenticado() ){
-    header('Location: http://localhost/immobiliaria/miperfil/'); // Cuidado con esta función. Debe ser llamada antes de MOSTRAR NADA por pantalla, incluidos espacios en blanco.
+    header('Location: http://localhost/immobiliaria/panel/'); 
  }
  else if($_POST){
      $userMail = $_POST['mail'];
      $pass = $_POST['pass'];
      
      if(login($userMail, $pass)){
-         header('Location: http://localhost/immobiliaria/miperfil/');
+         header('Location: http://localhost/immobiliaria/panel/');
      }
      else{
          $error = "<div class='error'>

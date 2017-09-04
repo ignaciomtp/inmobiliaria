@@ -3,6 +3,7 @@
 	define( "DB_DSN", "mysql:host=localhost;dbname=immobiliaria;charset=utf8" );
         define( "DB_USERNAME", "root" );
 	define( "DB_PASSWORD", '' );
+        define( "FOTOS", "img/fotos/");
 
         
         function generarUrlMenu($val){
@@ -92,4 +93,99 @@
         }
         
         
+        function urls_amigables($url) {
+
+                // Tranformamos todo a minusculas
+
+                $url = strtolower($url);
+                
+                //Rememplazamos caracteres especiales latinos
+
+                $find = array('á', 'é', 'í', 'ó', 'ú', 'ñ', 'Á'
+                    . '', 'É', 'Í', 'Ó', 'Ú', 'Ñ');
+
+                $repl = array('a', 'e', 'i', 'o', 'u', 'n', 'a', 'e', 'i', 'o', 'u', 'n');
+
+                $url = trim($url);
+                $url = str_replace ($find, $repl, $url);
+
+                // Añaadimos los guiones
+
+                $find = array(' ', '&', '\r\n', '\n', '+'); 
+                $url = str_replace ($find, '-', $url);
+
+                // Eliminamos y Reemplazamos demás caracteres especiales
+
+                $find = array('/[^a-z0-9\-<>.]/', '/[\-]+/', '/<[^>]*>/');
+
+                $repl = array('-', '-', '-');
+
+                $url = preg_replace ($find, $repl, $url);
+
+                return $url;
+
+        }
+        
+        function subeImagen($destino, $imagen, $ctemp){
+            $imagen = urls_amigables($imagen);
+            $partes_ruta = pathinfo($destino.$imagen);
+
+
+            //Mientras que el nombre del fichero exista en destino
+            $a=0;
+            while(file_exists($destino.$imagen))
+            {
+                    // Aumentar nombre de fichero
+                    $a++;
+                    // Hasta obtener un nombre valido
+                    $imagen=$partes_ruta['filename'].
+                                            "_".
+                                            $a.
+                                            ".".
+                                            $partes_ruta['extension'];
+            }
+
+            //subirImagen($destino, $foto);
+            move_uploaded_file($ctemp, $destino.$imagen);	
+
+            return $imagen;
+		
+	}
+        
+        
+        function devolverTipo($tipo){
+
+            switch ($tipo){
+                case 1: 
+                    $t = "Casa";
+                    break;
+                case 2:
+                    $t = "Piso";
+                    break;
+                case 3: 
+                    $t = "Local Comercial";
+                    break;
+                case 4:
+                    $t = "Plaza de Garaje";
+                    break;
+                case 5:
+                    $t = "Terreno";
+                    break;
+                case 6:
+                    $t = "Estudio";
+                    break;
+
+            }
+
+            return $t;
+        }
+        
+        function verPrecioMod($modalidad){
+            if($modalidad == "Alquiler"){
+                return " €/mes";
+            }
+            else{
+                return " €";
+            }
+        }
         

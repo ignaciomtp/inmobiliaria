@@ -52,6 +52,26 @@
                 'logout' => array(
                   'controller' =>'Controller',
                   'action' =>'logout',
+                  ),
+                'nuevoinmueble' => array(
+                  'controller' =>'Controller',
+                  'action' =>'nuevoInmueble',
+                  ),
+                'insertarinmueble' => array(
+                  'controller' =>'Controller',
+                  'action' =>'insertarinmueble',
+                  ),
+                'panel' => array(
+                  'controller' =>'Controller',
+                  'action' =>'panel',
+                  ),
+                'verinmueble' => array(
+                  'controller' =>'Controller',
+                  'action' =>'verInmueble',
+                  ),
+                'pruebas' => array(
+                  'controller' =>'Controller',
+                  'action' =>'pruebas',
                   )
             );            
 

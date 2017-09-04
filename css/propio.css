@@ -29,3 +29,37 @@
     
     margin:0;
 }
+
+.limpiar{
+    clear: both;
+}
+
+.borde{
+    border:1px solid red;
+}
+
+.precio{
+    font-weight: bold;
+    color:#1b6d85;
+    float:right;
+    text-align: right;
+    margin-top: -3px;
+    
+}
+
+.well2{
+    background-color: #FFF;
+}
+
+.well2-int{
+    padding:10px;
+}
+
+.well2-int h4 span{
+    color:#204d74;
+}
+
+.mitad{
+    width: 50%;
+    float:left;
+}
